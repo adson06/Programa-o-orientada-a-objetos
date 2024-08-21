@@ -1,0 +1,29 @@
+package primeira;//primeira java class
+ublic class Produto {
+
+    String nome;
+
+    double preco;
+
+    double desconto;
+
+}
+
+package primeira; //segunda javaclass
+
+public class primeira {
+    public static void main(String[] args){
+
+        Produto p1 = new Produto(); //nome igual a 1 javaclass
+
+        p1.nome = "laptop";
+        p1.preco = 5999.90;
+        p1.desconto = 0.15;
+
+
+        double totalComDesconto = p1.preco * (1 - p1.desconto);
+        System.out.println( "Nome " + p1.nome);
+        System.out.println("Preço " + p1.preco);
+        System.out.println("Total: " + totalComDesconto);
+    }
+}
