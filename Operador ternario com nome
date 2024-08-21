@@ -1,0 +1,12 @@
+package operador;
+
+import javax.swing.*;
+
+public class operador {
+    public static void main(String[] args) {
+        String nome = JOptionPane.showInputDialog("Digite seu nome");
+        String result = nome.isEmpty() ? "Nome vazio" : "Nome com dados";
+        
+        System.out.println(result);
+    }
+}
