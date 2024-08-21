@@ -1,0 +1,14 @@
+package operador;
+
+import javax.swing.*;
+
+public class operador {
+    public static void main(String[] args) {
+        String media = JOptionPane.showInputDialog("Digite a nota");
+        double mediaparse = Double.parseDouble(media);
+
+        String resultado = mediaparse >= 7 ? "Aprovado" : "Reprovado"; //operador ternario
+
+        System.out.println(resultado);
+    }
+}
