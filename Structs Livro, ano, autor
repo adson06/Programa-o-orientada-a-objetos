@@ -1,0 +1,35 @@
+package primeira;
+
+public class Produto {
+
+    String Titulo;
+
+    String autor;
+
+    double preco;
+
+    int anodepublicacao;
+
+}
+
+
+package primeira;
+
+public class primeira {
+    public static void main(String[] args){
+
+        Produto p1 = new Produto();
+        p1.Titulo = "Pequeno Principe";
+        p1.autor = "Antony";
+        p1.preco = 15.45;
+        p1.anodepublicacao = 1943;
+
+
+
+        System.out.println( "Nome " + p1.Titulo);
+        System.out.println( "Autor " + p1.autor);
+        System.out.println("Preço " + p1.preco);
+        System.out.println("Ano de publicação: " + p1.anodepublicacao);
+    }
+}
+
