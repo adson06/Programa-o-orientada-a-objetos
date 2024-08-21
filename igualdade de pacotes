@@ -1,0 +1,16 @@
+package Igualdadedepacotes;
+
+import java.util.Scanner;
+
+public class igualdadedepacotes {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("2" == "2");
+        String s1 = "2";
+        System.out.println("Digite o numero");
+        String s2 = input.nextLine();
+
+        System.out.println(s1 .equals(s2));
+    }
+}
