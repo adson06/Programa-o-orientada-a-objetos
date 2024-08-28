@@ -1,0 +1,50 @@
+package FazendaTeste;
+
+public class Alimento {
+    String nome;
+
+    double peso;
+
+    Alimento(String nome, double peso){
+        this.nome = nome;
+        this.peso = peso;
+
+
+    }
+}
+
+
+package FazendaTeste;
+
+public class Animal {
+    String nome;
+   double peso;
+
+   Animal(String nome, double peso){
+       this.nome = nome;
+       this.peso = peso;
+   }
+}
+
+
+
+package FazendaTeste;
+
+public class Fazenda {
+    public static void main(String[] args) {
+       Alimento a = new Alimento("Trigo", 4.00);
+       Animal ani = new Animal("Vaca", 270.00);
+
+
+
+        System.out.println(a.nome);
+        System.out.println(ani.nome);
+        System.out.println(ani.peso + a.peso);
+
+
+    }
+}
+
+
+
+
