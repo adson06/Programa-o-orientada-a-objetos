@@ -1,0 +1,26 @@
+package construtor;
+
+public class Produto {
+    String nome;
+    double preco;
+
+    Produto(String nome, double preco){
+
+        this.nome = nome;
+        this.preco = preco;
+    }
+}
+
+
+package construtor;
+
+public class main {
+    public static void main(String[] args) {
+        Produto P1 = new Produto("Arroz", 15);;
+
+        System.out.println(P1.nome);
+        System.out.println(P1.preco);
+    }
+
+}
+
