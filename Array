@@ -21,6 +21,9 @@ public class Produto {
         for (int i = 0; i < notasArray.length; i++){
             System.out.println(notasArray[i]);
         }
+       for (int i = 0; i < notasArray.length; i++){
+            System.out.println(notasArray[i]);
+        }
     }
 }
 
