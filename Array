@@ -1,0 +1,29 @@
+package Produto;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class Produto {
+
+    public static void main(String[] args) {
+        double[] notasArray = new double[2];
+
+        notasArray[0] = 7.4;
+        notasArray[1] = 8.4;
+        System.out.println(notasArray[0]);
+        System.out.println(notasArray[1]);
+
+
+        String notas = Arrays.toString(notasArray);
+        System.out.printf(notas);
+        System.out.println("");
+
+        for (int i = 0; i < notasArray.length; i++){
+            System.out.println(notasArray[i]);
+        }
+    }
+}
+
+
+
+
