@@ -17,6 +17,11 @@ public class Test {
 
         System.out.println(usuarios.get(2).nome);
 
+     for (Usuario usuario : usuarios){
+            System.out.println("Nome " + usuario.nome);
+            System.out.println(usuario);
+        }
+
     }
 
 }
@@ -35,5 +40,17 @@ public class Usuario {
         this.nome = nome;
         this.nickname = nickname;
         this.email = email;
+
+
+   public Usuario(String nome, String nickname, String email) {
+        this.nome = nome;
+        this.nickname = nickname;
+        this.email = email;
     }
-}
+
+    @Override
+        public String toString(){
+            return "Nome: " + nome + " Nickname: " + nickname + " email: " + email;
+        }
+    }
+
