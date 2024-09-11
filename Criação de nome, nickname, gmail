@@ -1,0 +1,39 @@
+package Test;
+
+import java.util.ArrayList;
+
+public class Test {
+    public static void main(String[] args) {
+
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+
+        Usuario u1 = new Usuario("Victor", "Dev" , "dev@gmail.com");
+        usuarios.add(u1);
+        usuarios.add(new Usuario("Catarina", "atrasada", "@gmail.com"));
+        Usuario u2 = new Usuario("Schwab", "Joao", "schwab@gmail.com");
+        usuarios.add(u2);
+
+        System.out.println(usuarios.stream().count());
+
+        System.out.println(usuarios.get(2).nome);
+
+    }
+
+}
+
+
+
+package Test;
+
+public class Usuario {
+    String nome;
+    String nickname;
+
+    String email;
+
+    public Usuario(String nome, String nickname, String email) {
+        this.nome = nome;
+        this.nickname = nickname;
+        this.email = email;
+    }
+}
