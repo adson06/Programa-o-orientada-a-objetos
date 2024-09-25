@@ -1,0 +1,88 @@
+package Pessoa;
+
+public class Pessoa {
+    private String titular;
+    private int NumerpConta;
+    private double saldo;
+    private double valor;
+    private double sacar;
+
+    public Pessoa(String titular, int numerpConta, double saldo) {
+        this.titular = titular;
+        NumerpConta = numerpConta;
+        this.saldo = saldo;
+    }
+
+    public Pessoa() {
+
+    }
+
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setNome(String titular) {
+        this.titular = titular;
+
+    }
+
+    public int getNumerpConta() {
+        return NumerpConta;
+    }
+
+    public void setNumerpConta(int NumerpConta) {
+        this.NumerpConta = NumerpConta;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor += saldo;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+
+    }
+
+    public double getSacar() {
+        return sacar;
+    }
+
+    public void setSacar(double sacar) {
+        this.sacar-=saldo;
+    }
+}
+
+
+
+package Pessoa;
+
+import javax.swing.*;
+
+public class main {
+    public static void main(String[] args) {
+        Pessoa pessoa = new Pessoa();
+
+
+        JOptionPane.showInputDialog("Digite seu nome:");
+        JOptionPane.showInputDialog("Digite o Número da Conta:");
+        JOptionPane.showInputDialog("Digite seu saldo:");
+        JOptionPane.showInputDialog("Digite o valor que voce quer depositar:");
+        JOptionPane.showInputDialog("Digite quanto você quer sacar:");
+
+        System.out.println("Nome do Titular: " + pessoa.getTitular() + "\nNúmero da Conta: " + pessoa.getNumerpConta() + "\nSaldo: " + pessoa.getSaldo() + "\nDeposito: " + pessoa.getValor() + "\nSaque: " + pessoa.getSacar());
+
+
+    }
+}
+
+
+
