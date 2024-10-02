@@ -1,0 +1,33 @@
+package hranca;
+
+class Animal{
+    //procted so fica visivel para subclasses.
+    protected String tipo;
+
+    public Animal(String tipo) {
+        this.tipo = tipo;
+    }
+    protected void exibirTipo(){
+        System.out.println("Raca do Gato: " + tipo);
+
+    }
+}
+class gato extends  Animal{
+    private String nome;
+
+    public gato(String tipo, String nome) {
+        super(tipo);
+        this.nome = nome;
+    }
+    void exibirDetalhe(){
+        super.exibirTipo();
+        System.out.println("Nome do Gato" + nome);
+    }
+}
+
+    public class heranca{
+        public static void main(String[] args) {
+           gato cat = new gato("Siames", "Feio");
+           cat.exibirDetalhe();
+        }
+    }
