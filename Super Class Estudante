@@ -1,0 +1,31 @@
+package hranca;
+
+class Pessoa {
+    String nome;
+
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+    void exibirNome() {
+        System.out.println("Nome: " + nome);
+    }
+}
+    class Estudante extends Pessoa{
+        String escola;
+
+        public Estudante(String nome, String escola) {
+            super(nome);
+            this.escola = escola;
+        }
+        void exibirDetalhes(){
+            super.exibirNome();
+            System.out.println("Escola: " + escola);
+        }
+    }
+    public class heranca{
+        public static void main(String[] args) {
+            Estudante estudante = new Estudante("Henrique", "CMB");
+            estudante.exibirDetalhes();
+        }
+    }
