@@ -1,0 +1,35 @@
+package hranca;
+
+//Super Classe
+class Animal{
+    void comer(){
+        System.out.println("Esse animal está comendo");
+    }
+
+}
+
+//Subclasse
+class cachorro extends Animal{
+    void latir(){
+        System.out.println("O cachorro está latindo");
+    }
+}
+
+class gato extends Animal{
+    void mia(){
+        System.out.println("O gato está miando");
+    }
+}
+
+
+public class Heranca {
+    public static void main(String[] args) {
+        cachorro dog = new cachorro();
+        dog.latir();
+        dog.comer();
+
+        gato cat = new gato();
+        cat.mia();
+        cat.comer();
+    }
+}
