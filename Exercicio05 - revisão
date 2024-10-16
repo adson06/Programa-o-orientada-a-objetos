@@ -1,0 +1,86 @@
+package exercicio05;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Livro {
+    String titulo;
+    String autor;
+    int anoPublicacao;
+
+    Livro(String titulo, String autor, int anoPublicacao) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+    }
+
+    void exibirInformacoes() {
+        System.out.println("Título: " + titulo + ", Autor: " + autor + ", Ano de Publicação: " + anoPublicacao);
+    }
+}
+
+class Biblioteca {
+    List<Livro> livros;
+
+    Biblioteca() {
+        livros = new ArrayList<>();
+    }
+
+    void adicionarLivro(Livro livro) {
+        livros.add(livro);
+    }
+
+    void removerLivro(String titulo) {
+        livros.removeIf(livro -> livro.titulo.equals(titulo));
+    }
+
+    void listarLivros() {
+        if (livros.isEmpty()) {
+            System.out.println("Nenhum livro disponível na biblioteca.");
+        } else {
+            for (Livro livro : livros) {
+                livro.exibirInformacoes();
+            }
+        }
+    }
+
+    void buscarPorAutor(String autor) {
+        boolean encontrado = false;
+        for (Livro livro : livros) {
+            if (livro.autor.equals(autor)) {
+                livro.exibirInformacoes();
+                encontrado = true;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("Nenhum livro encontrado para o autor: " + autor);
+        }
+    }
+}
+public class exercicio5 {
+    public static void main(String[] args) {
+
+            Biblioteca biblioteca = new Biblioteca();
+
+            Livro livro1 = new Livro("Dom Casmurro", "Machado de Assis", 1899);
+            Livro livro2 = new Livro("O Guarani", "José de Alencar", 1857);
+            Livro livro3 = new Livro("Memórias Póstumas de Brás Cubas", "Machado de Assis", 1881);
+
+            biblioteca.adicionarLivro(livro1);
+            biblioteca.adicionarLivro(livro2);
+            biblioteca.adicionarLivro(livro3);
+
+            System.out.println("Lista de livros na biblioteca:");
+            biblioteca.listarLivros();
+
+            System.out.println("\nBuscando livros de Machado de Assis:");
+            biblioteca.buscarPorAutor("Machado de Assis");
+
+            System.out.println("\nRemovendo o livro 'Dom Casmurro'...");
+            biblioteca.removerLivro("Dom Casmurro");
+
+            System.out.println("\nLista de livros após remoção:");
+            biblioteca.listarLivros();
+        }
+    }
+    
