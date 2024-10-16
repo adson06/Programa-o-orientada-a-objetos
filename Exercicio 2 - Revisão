@@ -1,0 +1,55 @@
+package Funcionario;
+
+class Pessoa {
+    String nome;
+    int idade;
+
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+}
+
+class Funcionario extends Pessoa{
+
+    public Funcionario(String nome, int idade, double salario, String cargo) {
+        super(nome, idade);
+        this.salario = salario;
+        this.cargo = cargo;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    double salario;
+    String cargo;
+    double salarioAnual;
+
+    public void calcularSalarioAnual(){
+        salarioAnual = salario * 12;
+    }
+}
+
+
+public class salario {
+    public static void main(String[] args) {
+        Funcionario funcionario = new Funcionario("Henrique", 18, 3000, "Programador");
+
+        funcionario.calcularSalarioAnual();
+        System.out.println("Nome: " + funcionario.getNome() + " Idade: " + funcionario.getIdade() + " Cargo: " + funcionario.getCargo() );
+        System.out.println("Salario Anual: " + funcionario.salarioAnual);
+    }
+}
