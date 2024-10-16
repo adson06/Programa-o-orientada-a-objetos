@@ -1,0 +1,90 @@
+package exercicio04;
+import java.util.ArrayList;
+import java.util.List;
+
+class Veiculo {
+    String marca;
+    String modelo;
+    int ano;
+
+    Veiculo(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    void exibirInformacoes() {
+        System.out.println("Marca: " + marca + ", Modelo: " + modelo + ", Ano: " + ano);
+    }
+}
+
+class Carro extends Veiculo {
+    int portas;
+
+    Carro(String marca, String modelo, int ano, int portas) {
+        super(marca, modelo, ano);
+        this.portas = portas;
+    }
+
+    @Override
+    void exibirInformacoes() {
+        System.out.println("Carro - Marca: " + marca + ", Modelo: " + modelo + ", Ano: " + ano + ", Portas: " + portas);
+    }
+}
+
+class Moto extends Veiculo {
+    boolean carenagem;
+
+    Moto(String marca, String modelo, int ano) {
+        super(marca, modelo, ano);
+    }
+
+    @Override
+    void exibirInformacoes() {
+        System.out.println("Moto - Marca: " + marca + ", Modelo: " + modelo + ", Ano: " + ano);
+    }
+}
+
+class Loja {
+    List<Veiculo> veiculos;
+
+    Loja() {
+        veiculos = new ArrayList<>();
+    }
+
+    void adicionarVeiculo(Veiculo veiculo) {
+        veiculos.add(veiculo);
+    }
+
+    void removerVeiculo(Veiculo veiculo) {
+        veiculos.remove(veiculo);
+    }
+
+    void listarVeiculos() {
+        if (veiculos.isEmpty()) {
+            System.out.println("Nenhum veículo na loja.");
+        } else {
+            for (Veiculo veiculo : veiculos) {
+                veiculo.exibirInformacoes();
+            }
+        }
+    }
+}
+public class exercicio4 {
+    public static void main(String[] args) {
+        Loja loja = new Loja();
+
+        Carro carro1 = new Carro("JEEP", "Compass", 2020, 4);
+        Moto moto1 = new Moto("Kawazaki", "Ninja", 2022);
+
+        loja.adicionarVeiculo(carro1);
+        loja.adicionarVeiculo(moto1);
+
+        loja.listarVeiculos();
+
+        loja.removerVeiculo(carro1);
+
+        loja.listarVeiculos();
+    }
+}
+
