@@ -1,0 +1,60 @@
+package Produto;
+
+class Produto {
+
+    String nome;
+    double preco;
+    int quantidadeEstoque;
+
+    public Produto(String nome, double preco, int quantidadeEstoque) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public int getQuantidadeEstoque() {
+        return quantidadeEstoque;
+    }
+
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+
+    public void aplicarDesconto(double percentual){
+        preco -= preco * (percentual / 100);
+    }
+
+}
+
+public class main {
+    public static void main(String[] args) {
+        Produto p = new Produto("Carne", 34.56, 2);
+
+
+        System.out.println("Nome " + p.getNome() + " Preço " + p.getPreco() + " Quantidade estoque " + p.getQuantidadeEstoque());
+
+        p.aplicarDesconto(20);
+        System.out.println("Preço do Produto com 20% desconto " + p.getPreco());
+
+        p.aplicarDesconto(15);
+        System.out.println("A vista tem mais 15% de desconto " + p.getPreco());
+    }
+}
+
