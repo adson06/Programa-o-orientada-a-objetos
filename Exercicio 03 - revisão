@@ -1,0 +1,88 @@
+package exercicio03;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Aluno {
+    String nome;
+    double nota;
+
+    Aluno(String nome, double nota) {
+        this.nome = nome;
+        this.nota = nota;
+    }
+
+    String getNome() {
+        return nome;
+    }
+
+    double getNota() {
+        return nota;
+    }
+
+    void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    void setNota(double nota) {
+        this.nota = nota;
+    }
+}
+
+class Gerenciador {
+    List<Aluno> alunos;
+
+    Gerenciador() {
+        alunos = new ArrayList<>();
+    }
+
+    void adicionarAluno(Aluno aluno) {
+        alunos.add(aluno);
+    }
+
+    void removerAluno(String nome) {
+        alunos.removeIf(aluno -> aluno.getNome().equals(nome));
+    }
+
+    void listarAlunos() {
+        if (alunos.isEmpty()) {
+            System.out.println("Nenhum aluno cadastrado.");
+        } else {
+            for (Aluno aluno : alunos) {
+                System.out.println("Nome: " + aluno.getNome() + ", Nota: " + aluno.getNota());
+            }
+        }
+    }
+
+    double calcularMedia() {
+        if (alunos.isEmpty()) {
+            System.out.println("Nenhum aluno para calcular a média.");
+            return 0.0;
+        }
+
+        double somaNotas = 0.0;
+        for (Aluno aluno : alunos) {
+            somaNotas += aluno.getNota();
+        }
+        return somaNotas / alunos.size();
+    }
+}
+
+
+public class exercicio03 {
+    public static void main(String[] args) {
+        Gerenciador gerenciador = new Gerenciador();
+
+        gerenciador.adicionarAluno(new Aluno("Henrique", 8.5));
+        gerenciador.adicionarAluno(new Aluno("Gabriel", 9.0));
+        gerenciador.adicionarAluno(new Aluno("Cauã", 7.5));
+
+        gerenciador.listarAlunos();
+        System.out.println("Média das notas: " + gerenciador.calcularMedia());
+
+        gerenciador.removerAluno("Gabriel");
+        gerenciador.listarAlunos();
+        System.out.println("Média das notas: " + gerenciador.calcularMedia());
+    }
+    }
+
