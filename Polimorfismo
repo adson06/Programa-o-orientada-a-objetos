@@ -1,0 +1,51 @@
+package hranca;
+
+import java.util.ArrayList;
+
+class animall{
+    char som(){
+        System.out.println("O animal fez um som");
+        return 0;
+    }
+}
+class Dog extends animall {
+    @Override
+    char som() {
+        super.som();
+        System.out.println("O cachorro fez um som");
+        return 0;
+    }
+}
+    class Cat extends animall{
+        @Override
+        char som() {
+            super.som();
+            System.out.println("O gato fez um som");
+
+            return 0;
+        }
+}
+public class animal {
+    public static void main(String[] args) {
+
+        ArrayList<animall> animals = new ArrayList<>();
+
+        animall Animal = new animall();
+        Animal.som();
+
+        animall dog = new Dog();
+        dog.som();
+
+        animall cat = new Cat();
+        cat.som();
+        animals.add(Animal);
+        animals.add(cat);
+        animals.add(dog);
+
+        for (animall a : animals){
+            System.out.println(a.som());
+        }
+
+    }
+
+}
