@@ -1,0 +1,48 @@
+package Pagamento;
+
+abstract class Pagamento {
+
+ public abstract void processarPagamento(double valor);
+}
+
+class CartaoCredito extends Pagamento {
+ @Override
+ public void processarPagamento(double valor) {
+  System.out.println("Processando pagamento com Cartão de Crédito...");
+  System.out.println("Verificando saldo...");
+  System.out.println("Pagamento de R$" + valor + "Aprovado.\n");
+ }
+}
+
+class PayPal extends Pagamento {
+ @Override
+ public void processarPagamento(double valor) {
+  System.out.println("Processando pagamento com PayPal...");
+  System.out.println("Autenticando usuário...");
+  System.out.println("Pagamento de R$" + valor + " Aprovado.\n");
+ }
+}
+class BoletoBancario extends Pagamento {
+ @Override
+ public void processarPagamento(double valor) {
+  System.out.println("Processando pagamento com Boleto Bancário...");
+  System.out.println("Gerando boleto bancário...");
+  System.out.println("Boleto no valor de R$" + valor + " gerado com sucesso.\n");
+ }
+}
+
+public class conta {
+ public static void main(String[] args) {
+  Pagamento[] pagamentos = new Pagamento[3];
+  pagamentos[0] = new CartaoCredito();
+  pagamentos[1] = new PayPal();
+  pagamentos[2] = new BoletoBancario();
+
+  
+  double valor = 150.0; 
+  for (Pagamento pagamento : pagamentos) {
+   pagamento.processarPagamento(valor);
+  }
+ }
+}
+
